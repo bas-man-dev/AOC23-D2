@@ -1,3 +1,7 @@
+# Part 1 was to check if each game was possible
+# we were given the max amount of red, green, blue cubes in the bag
+# the task was to add ID numbers (game numbers)
+
 import re
 
 RED = 12
