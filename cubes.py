@@ -14,21 +14,19 @@ with open("data.txt") as my_file:
     for line in my_file:
         line =  line.strip()
         split_data = re.split('[:;,]', line)
-
+        
+        # Apart from the first piece of data where Id is, the rest are organised as  number : colour
         for idx, item in enumerate(split_data):
             game_cubes = item.split()
 
             if idx == 0:
                 ID = int(game_cubes[1])
 
-            if game_cubes[1] == 'red':
-                if int(game_cubes[0]) > RED:
+            if game_cubes[1] == 'red' and int(game_cubes[0]) > RED:
                     ID = 0
-            elif game_cubes[1] == 'green':
-                if int(game_cubes[0]) > GREEN:
+            if game_cubes[1] == 'green' and int(game_cubes[0]) > GREEN:
                     ID = 0
-            elif game_cubes[1] == 'blue':
-                if int(game_cubes[0]) > BLUE:
+            if game_cubes[1] == 'blue' and int(game_cubes[0]) > BLUE:
                     ID = 0
 
         result_1 += ID
